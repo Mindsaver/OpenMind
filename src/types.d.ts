@@ -2,37 +2,17 @@
 
 // memory extension samples
 
-interface SpawnMemory {
-    currentCreeps: number;
-}
+interface SpawnMemory {}
+
+type CreepRole = "MINER" | "TRANSPORTER" | "WORKER" | "SCOUT";
 
 interface CreepMemory {
-    role: string;
-    room?: string;
-    working?: boolean;
-    attackTarget?: any;
-    energyUsed?: number;
-    target?: AnyStructure | null;
-    inNewRoomCount?: number;
-    currentMineID?: number;
-    isTransporting?: boolean;
-    transportedEngergy?: number;
-    nextRoom?: string;
-    spawn: StructureSpawn;
-}
-interface RoomMemory {
-    mineID: number;
+    role: number;
 }
 
-interface Memory {
-    uuid: number;
-    log: any;
-    scoutData: any;
-    insufficentFarmRoute: any;
-    sufficentFarmRoute: any;
-    rangeFarmRange: number;
-    rangeFarmData: any;
-}
+interface RoomMemory {}
+
+interface Memory {}
 
 // `global` extension samples
 declare namespace NodeJS {
