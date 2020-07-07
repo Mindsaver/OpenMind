@@ -12,11 +12,17 @@ interface CreepMemory {
 
 interface RoomMemory {}
 
-interface Memory {}
+interface Memory {
+    Controller: any;
+}
 
 // `global` extension samples
 declare namespace NodeJS {
     interface Global {
         log: any;
     }
+}
+
+interface RoomData {
+    Sources: object;
 }

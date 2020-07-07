@@ -1,0 +1,122 @@
+BASE X:13,Y:11
+http://prntscr.com/td706j
+
+Road Positions:
+X: -6 	Y: 1
+X: -6 	Y: 3
+X: 6 	Y: 1
+X: 6 	Y: 3
+
+
+lvl 1
+Container x 5
+Road true
+
+lvl 2
+Extension x 5
+Road true
+Wall true
+Rampart true
+Container x 5
+
+http://prntscr.com/td74i7
+Buildings = {
+	Extensions:[{x:-1,y:-1},{x:-2,y:0},{x:-1,y:2},{x:-2,y:-2},{x:-3,y:-1}],
+	Roads:[{x:0,y:-1},{x:-1,y:0},{x:-2,y:-1},{x:-3,y:-2},{x:1,y:0}]
+	Storage:[]
+}
+
+lvl 3
+Extension x 10
+Road true
+Wall true
+Rampart true
+Tower x 1
+Container x 5
+
+http://prntscr.com/td7ja6
+Buildings = {
+	Extensions:[{x:-3,y:0},{x:-4,y:-1},{x:-4,y:-2},{x:-3,y:-3},{x:-2,y:-3}],
+	Towers:[{x:0,y:2}],
+	Roads:[{x:-2,y:1},{x:-1,y:2},{x:0,y:3},{x:1,y:2},{x:2,y:1}]
+	Container:[{x:0,y:1}]
+}
+
+lvl 4
+Extension x 20
+Road true
+Wall true
+Rampart true
+Tower x 1
+Container x 5
+Storage x 1
+
+http://prntscr.com/td7s53
+Buildings = {
+	Extensions:[{x:1,y:-1},{x:1,y:-2},{x:2,y:-2},{x:2,y:-3},{x:3,y:-3},{x:4,y:-2},{x:4,y:-1},{x:3,y:-1},{x:3,y:0},{x:2,y:0}],
+	Roads:[{x:-5,y:-2},{x:-4,y:-3},{x:-3,y:-4},{x:2,y:-1},{x:3,y:-2},{x:4,y:-3},{x:3,y:-4},{x:5,y:-2},{x:3,y:1},{x:4,y:1},{x:5,y:1},{x:6,y:1},{x:6,y:2},{x:6,y:3},{x:5,y:3},{x:4,y:3},{x:3,y:3},{x:2,y:3},{x:1,y:3},{x:-1,y:3},{x:-2,y:3},{x:-3,y:3},{x:-4,y:3},{x:-5,y:3},{x:-6,y:3},{x:-6,y:2},{x:-6,y:1},{x:-5,y:1},{x:-4,y:1},{x:-3,y:1}]
+	Storage:[{x:0,y:4}]
+}
+
+lvl 5
+Extension x 30
+Road true
+Wall true
+Rampart true
+Tower x 2
+Container x 5
+Storage x 1
+Link x 2
+
+http://prntscr.com/td7z20
+Buildings = {
+	Extensions:[{x:-5,y:-1},{x:-6,y:-1},{x:-6,y:-2},{x:-6,y:-3},{x:-4,y:-3},{x:-4,y:-4},{x:-3,y:-4},{x:-3,y:-5},{x:-2,y:-1},{x:-1,y:-1}],
+	Towers:[{x:1,y:3}]
+}
+
+lvl 6
+Extension x 40
+Road true
+Wall true
+Rampart true
+Tower x 2
+Container x 5
+Storage x 1
+Link x 3
+Extractor x 1
+Lab x 3
+Terminal x 1
+Spawn x 1
+
+lvl 7
+Extension x 50
+Road true
+Wall true
+Rampart true
+Tower x 3
+Container x 5
+Storage x 1
+Link x 4
+Extractor x 1
+Lab x 6
+Terminal x 1
+Factory x 1
+Spawn x 2
+
+lvl 8
+Extension x 60
+Road true
+Wall true
+Rampart true
+Tower x 6
+Container x 5
+Storage x 1
+Link x 6
+Extractor x 1
+Lab x 10
+Terminal x 1
+Factory x 1
+Spawn x 3
+Observer x 1
+Power Spawn x 1
+Nuker x 1

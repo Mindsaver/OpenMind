@@ -6,5 +6,12 @@ export enum CreepRole {
 }
 
 export class BaseRole {
-    constructor() {}
+    creep: Creep;
+    constructor(creep: Creep) {
+        this.creep = creep;
+    }
+
+    tick() {
+        
+    }
 }
