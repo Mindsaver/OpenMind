@@ -1,21 +1,18 @@
 import { BaseRole, CreepRole } from "role/base";
 import { Worker } from "role/worker";
 
-export const Run = function (creep: Creep) {
-    switch (creep.memory.role) {
-        case CreepRole.WORKER: {
-            new Worker(creep).tick();
-            break;
-        }
-        case CreepRole.MINER: {
-            //new Worker(creep).tick();
-            break;
-        }
-        case CreepRole.TRANSPORTER: {
-            break;
-        }
-        case CreepRole.SCOUT: {
-            break;
+export module RoleController {
+    export function Run(creep: Creep) {
+        var role: CreepRole = <CreepRole>(<unknown>creep.memory.role);
+        if (role == CreepRole.WORKER) {
+            console.log("WORKER");
+            new Worker(creep).Tick();
+        } else if (role == CreepRole.MINER) {
+            console.log("MINER");
+        } else if (role == CreepRole.TRANSPORTER) {
+            console.log("TRANSPORTER");
+        } else if (role == CreepRole.SCOUT) {
+            console.log("SCOUT");
         }
     }
-};
+}

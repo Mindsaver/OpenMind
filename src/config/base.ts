@@ -1,4 +1,4 @@
-export const BaseSettings = {
+export const BaseSettings: any = {
     RoadPos: [
         { x: -6, y: 1 },
         { x: -6, y: 3 },
@@ -6,13 +6,20 @@ export const BaseSettings = {
         { x: 6, y: 3 }
     ],
 
+    RoleOrder: {
+        // "MINER" | "TRANSPORTER" | "WORKER" | "SCOUT";
+        2: 0,
+        0: 1,
+        1: 2,
+        3: 3
+    },
+
     1: {
-        Buildings: {
-            Creeps: {
-                // "MINER" | "TRANSPORTER" | "WORKER" | "SCOUT";
-                2: 3 // WORKER
-            }
-        }
+        Creeps: {
+            // "MINER" | "TRANSPORTER" | "WORKER" | "SCOUT";
+            2: 3 // WORKER
+        },
+        Buildings: {}
     },
     2: {
         Creeps: {

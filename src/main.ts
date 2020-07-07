@@ -1,14 +1,15 @@
 import { ErrorMapper } from "utils/ErrorMapper";
-import * as ControllerSpawn from "controller/spawn";
+import { SpawnController } from "controller/spawn";
 import { RoomController } from "controller/room";
 
 export const loop = ErrorMapper.wrapLoop(() => {
     // Automatically delete memory of missing creeps
-    for (const name in Memory.creeps) {
+    /*for (const name in Memory.creeps) {
         if (!(name in Game.creeps)) {
             delete Memory.creeps[name];
         }
-    }
+    }*/
+    SpawnController.Run();
     RoomController.Run();
 
     /*  var sources: Source[] = Game.spawns.Spawn1.room.find(FIND_SOURCES);
