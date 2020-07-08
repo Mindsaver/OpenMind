@@ -1,4 +1,11 @@
 export const BaseSettings: any = {
+    CreepName: {
+        // "MINER" | "TRANSPORTER" | "WORKER" | "SCOUT";
+        0: "Miner",
+        1: "Transport",
+        2: "Worker",
+        3: "Scout"
+    },
     RoadPos: [
         { x: -6, y: 1 },
         { x: -6, y: 3 },
