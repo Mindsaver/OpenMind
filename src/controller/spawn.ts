@@ -1,26 +1,36 @@
 import { Room } from "data/room";
 import { SpawnData } from "data/spawn";
 import { BaseSettings } from "config/base";
+import { RoleController } from "controller/role";
 
 export module SpawnController {
     export function Run() {
-        SpawnData.Init();
+        if (SpawnData.Init()) {
+            return;
+        }
         var spawns = _.map(Game.spawns);
 
         spawns.forEach((spawn: any) => {
             var spawnDataList = SpawnData.GetList(spawn.room.name);
             console.log("CREEPS TO SPAWN: " + spawnDataList.length);
-            for (let x = 0; x < spawnDataList.length; x++) {
-                var spawnData = spawnDataList[x];
+            if (spawnDataList.length > 0) {
+                var spawnData = spawnDataList[0];
                 var name = BaseSettings.CreepName[spawnData.role] + " #" + Game.time;
 
-                if (spawn.spawnCreep([MOVE], name, { memory: { room: spawn.room.name, role: spawnData.role } }) == 0) {
+                var roleClass = RoleController.createRole(spawnData.role, name, spawn.room.name);
+                if (roleClass == null) return;
+                //CHECK IF CREEP COULD BE SPAWNED BEFORE AND IF YES CREATE ROLECLASS
+                if (
+                    spawn.spawnCreep([MOVE], name, {
+                        memory: roleClass
+                    }) == 0
+                ) {
                     console.log("REMOVE: role:" + spawnData.role + " ROOM: " + spawn.room.name);
-                    SpawnData.RemoveAtPosition(x);
-                    Room.AddCreep(spawn.room.name, name, spawnData.role);
-                    break;
+                    SpawnData.RemoveAtPosition(0);
+                    Room.AddCreep(spawn.room.name, name);
+                    return;
                 } else {
-                    break;
+                    return;
                 }
             }
         });

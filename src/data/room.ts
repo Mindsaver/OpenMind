@@ -22,7 +22,7 @@ export interface CreepData {
 
 export interface RoomData {
     name: string;
-    creeps: CreepData[];
+    creeps: string[];
     ressources: Ressource[];
     buildings: Building[];
     outposts: Outpost[];
@@ -37,7 +37,9 @@ export module Room {
             Memory.Controller.Rooms = {};
             console.log("Init RoomController");
             Room.Add(Game.spawns.Spawn1.room.name);
+            return true;
         }
+        return false;
     }
     export function Add(room: string) {
         //FIXME ADD ME LATER
@@ -78,14 +80,9 @@ export module Room {
         Memory.Controller.Rooms[room] = roomData;
     }
 
-    export function AddCreep(room: string, creep: string, role: CreepRole) {
+    export function AddCreep(room: string, creepName: string) {
         if (Memory.Controller.Rooms[room] == undefined) return;
-        var creepData: CreepData = {
-            name: creep,
-            birth: Game.time,
-            role: role
-        };
-        Memory.Controller.Rooms[room].creeps.push(creepData);
+        Memory.Controller.Rooms[room].creeps.push(creepName);
     }
     export function RemoveCreepAtPos(room: string, position: number) {
         if (Memory.Controller.Rooms[room] == undefined) return;

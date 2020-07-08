@@ -14,6 +14,7 @@ interface RoomMemory {}
 
 interface Memory {
     Controller: any;
+    BLA: any;
 }
 
 // `global` extension samples

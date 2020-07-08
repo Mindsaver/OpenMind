@@ -1,4 +1,5 @@
 import { BaseSettings } from "config/base";
+import { CreepRole } from "role/base";
 
 export module SpawnData {
     export function Init() {
@@ -8,7 +9,9 @@ export module SpawnData {
         if (Memory.Controller.Spawn == null) {
             Memory.Controller.Spawn = [];
             console.log("Init SpawnController");
+            return true;
         }
+        return false;
     }
     export function Add(role: CreepRole, room: string) {
         Memory.Controller.Spawn.push({ role: role, room: room });

@@ -2,17 +2,24 @@ export enum CreepRole {
     MINER,
     TRANSPORTER,
     WORKER,
-    SCOUT
+    SCOUT,
+    UNKOWN = 999
 }
 
 export class BaseRole {
-    creep: Creep;
-    constructor(creep: Creep) {
-        //   console.log("BASE");
-        this.creep = creep;
+    creepName: string;
+    role: CreepRole = CreepRole.UNKOWN;
+    masterRoom: string;
+    constructor(creep: string, masterRoom: string) {
+        this.creepName = creep;
+        this.masterRoom = masterRoom;
+    }
+
+    test() {
+        console.log("BASE ROLE TEST: " + this.creepName);
     }
 
     Tick() {
-        //   console.log("TICK");
+        console.log("TICK");
     }
 }

@@ -1,6 +1,17 @@
 import { ErrorMapper } from "utils/ErrorMapper";
 import { SpawnController } from "controller/spawn";
 import { RoomController } from "controller/room";
+import { StringDecoder } from "string_decoder";
+
+class Test {
+    test: string;
+    constructor(c: string) {
+        this.test = c;
+    }
+    say() {
+        console.log(this.test);
+    }
+}
 
 export const loop = ErrorMapper.wrapLoop(() => {
     // Automatically delete memory of missing creeps
@@ -9,8 +20,14 @@ export const loop = ErrorMapper.wrapLoop(() => {
             delete Memory.creeps[name];
         }
     }*/
-    SpawnController.Run();
     RoomController.Run();
+    SpawnController.Run();
+
+    //Memory.BLA.push(new Test());
+    //Memory.BLA[0] = new Test("fsfsdsdfsdf");
+    //var t = Memory.BLA[0];
+    //t.__proto__ = Test.prototype;
+    //t.say();
 
     /*  var sources: Source[] = Game.spawns.Spawn1.room.find(FIND_SOURCES);
     let goals = _.map(Game.spawns.Spawn1.room.find(FIND_SOURCES), function (source) {
