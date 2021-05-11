@@ -15,20 +15,20 @@ class Test {
 
 export const loop = ErrorMapper.wrapLoop(() => {
     // Automatically delete memory of missing creeps
+
     /*for (const name in Memory.creeps) {
         if (!(name in Game.creeps)) {
             delete Memory.creeps[name];
         }
     }*/
+
     RoomController.Run();
     SpawnController.Run();
-
     //Memory.BLA.push(new Test());
     //Memory.BLA[0] = new Test("fsfsdsdfsdf");
     //var t = Memory.BLA[0];
     //t.__proto__ = Test.prototype;
     //t.say();
-
     /*  var sources: Source[] = Game.spawns.Spawn1.room.find(FIND_SOURCES);
     let goals = _.map(Game.spawns.Spawn1.room.find(FIND_SOURCES), function (source) {
         // We can't actually walk on sources-- set `range` to 1
@@ -46,7 +46,6 @@ export const loop = ErrorMapper.wrapLoop(() => {
             Game.spawns.Spawn1.room.visual.circle(path.x, path.y);
         });
     });*/
-
     /*var roomData: RoomData = {
         Sources:
     };

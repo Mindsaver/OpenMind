@@ -90,6 +90,9 @@ export module Room {
             Memory.Controller.Rooms[room].creeps.splice(position, 1);
         }
     }
+    export function ListCreepsInRoom(room: string) {
+        return Memory.Controller.Rooms[room].creeps;
+    }
 
     export function GetList(): RoomData[] {
         return _.map(Memory.Controller.Rooms);

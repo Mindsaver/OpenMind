@@ -11,4 +11,7 @@ export class Worker extends BaseRole {
         console.log("WORKER ROLE TEST: " + this.subTestVar);
         super.test();
     }
+    Tick() {
+        super.Tick();
+    }
 }

@@ -20,6 +20,7 @@ export class BaseRole {
     }
 
     Tick() {
-        console.log("TICK");
+        console.log("TICK:" + this.creepName);
+        //console.log("TICK");
     }
 }
